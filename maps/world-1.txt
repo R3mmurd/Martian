@@ -1,0 +1,55 @@
+12 50
+E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E
+E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E
+E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E
+E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E
+E E E E E E E E E E E E E E E E E E E E E B E E B E E B E E TLG TG TG TG TG TG TG TRG E E E E E E E E E E E E
+E E E TLG TG TRG E E E E E E E E E TLG TG TG TRG TT E E E E E E E E E E BLG BG BG BG BG BG BG BRG E E E E E E E E E E E E
+E E E LG G RG E E ATLG ATG ATG ATRG E E E LG G G RG TM E E E E E E E E E E E E E E E E E E E E E E E E E E E E E E
+TT TT E BLG BG BRG E E E E E E E E E LG G G RG TB E E E E E E E E E E E E E E TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+TM TM E E E E E E E E E E E E TLG TG TG TG TG TRG E E E E E E E E E E E E E E TM TM TM TM TM TM TM TM TM TM TM TM TM TM TM TM
+TB TB E E E BUSH CACTUS E E E E E E BUSH LG G G G G RG CACTUS E E E E E E E E E E E E E TB TB TB TB TB TB TB TB TB TB TB TB TB TB TB TB
+TG TG TG TG TG TG TRG E E B B E E TLG TG TG TG TG TG TG TRG E E B B E E B B E E B E E TLG TG TG TG TG TG TG TG TG TG TG TG TG TG TG TG
+G G G G G G RG W W W W W W LG G G G G G G RG W W W W W W W W W W W W W LG G G G G G G G G G G G G G G G
+32
+coin-green 8 3
+coin-green 8 4
+coin-green 8 5
+coin-green 2 3
+coin-blue 2 4
+coin-green 2 5
+coin-green 2 15
+coin-red 1 16
+coin-red 1 17
+coin-blue 2 16
+coin-blue 2 17
+coin-green 2 18
+coin-green 3 30
+coin-green 3 31
+coin-green 3 32
+coin-green 3 33
+coin-green 3 34
+coin-green 3 35
+coin-green 3 36
+coin-green 3 37
+coin-blue 2 31
+coin-blue 2 32
+coin-blue 2 33
+coin-blue 2 34
+coin-blue 2 35
+coin-blue 2 36
+coin-red 1 32
+coin-red 1 33
+coin-red 1 34
+coin-red 1 35
+coin-yellow 0 33
+coin-yellow 0 34
+8
+snail-yellow 9 5 r
+snail-yellow 9 14 r
+snail-yellow 7 18 l
+snail-blue 9 34 r
+snail-blue 9 38 r
+snail-blue 9 42 r
+snail-blue 9 46 r
+snail-blue 3 30 r
