@@ -2,9 +2,6 @@
 This file contains the class MartianGame that describes
 a platformer.
 
-Content:
-    - Enemies
-
 Author: Alejandro Mujica (aledrums@gmail.com) 
 Date: 07/19/2020
 """
