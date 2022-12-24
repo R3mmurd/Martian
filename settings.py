@@ -9,16 +9,13 @@ TILE_SIZE = 16
 MAP_ROWS = 12
 MAP_COLS = 50
 
+# Size we're trying to emulate
 VIRTUAL_WIDTH = 25*TILE_SIZE
 VIRTUAL_HEIGHT = MAP_ROWS*TILE_SIZE
 
 # Size of our actual window
 WINDOW_WIDTH = VIRTUAL_WIDTH*4
 WINDOW_HEIGHT = VIRTUAL_HEIGHT*4
-
-# Size we're trying to emulate
-VIRTUAL_WIDTH = WINDOW_WIDTH//4
-VIRTUAL_HEIGHT = WINDOW_HEIGHT//4
 
 # A value for gravity
 GRAVITY = 980

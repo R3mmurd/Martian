@@ -25,7 +25,7 @@ class StartState(BaseState):
         pygame.mixer_music.play(loops=-1)
 
         self.title = Text(
-            'Marty Martian', settings.GAME_FONTS['medium'],
+            'Super Martian', settings.GAME_FONTS['medium'],
             settings.VIRTUAL_WIDTH, settings.VIRTUAL_HEIGHT//4,
             (197, 195, 198), shadowed=True
         )
@@ -46,12 +46,10 @@ class StartState(BaseState):
 
         Timer.tween(
             5,
-            {
-                self.title: {
-                    'x': settings.VIRTUAL_WIDTH//2 - self.title.rect.width//2
-                },
-                self: {'x': settings.VIRTUAL_WIDTH//2 - 8}
-            },
+            [
+                (self.title, {'x': settings.VIRTUAL_WIDTH//2 - self.title.rect.width//2}),
+                (self, {'x': settings.VIRTUAL_WIDTH//2 - 8})
+            ],
             on_finish=arrive
         )        
     

@@ -40,7 +40,7 @@ class MartianGame(Game):
 
 if __name__ == '__main__':
     game = MartianGame(
-        title='Marty Martian', window_width=settings.WINDOW_WIDTH,
+        title='Super Martian', window_width=settings.WINDOW_WIDTH,
         window_height=settings.WINDOW_HEIGHT,
         virtual_width=settings.VIRTUAL_WIDTH,
         virtual_height=settings.VIRTUAL_HEIGHT
