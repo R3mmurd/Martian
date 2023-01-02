@@ -7,6 +7,7 @@ Date: 07/19/2020
 import pygame
 
 from gale.animation import Animation
+from gale.input_handler import InputHandler, InputListener
 from gale.state_machine import BaseState
 from gale.text import Text, render_text
 from gale.timer import Timer
@@ -19,8 +20,9 @@ from src.defs.items import ITEMS
 import settings
 
 
-class StartState(BaseState):
+class StartState(BaseState, InputListener):
     def enter(self):
+        InputHandler.register_listener(self)
         pygame.mixer_music.load('sounds/music_intro.ogg')
         pygame.mixer_music.play(loops=-1)
 
@@ -29,15 +31,15 @@ class StartState(BaseState):
             settings.VIRTUAL_WIDTH, settings.VIRTUAL_HEIGHT//4,
             (197, 195, 198), shadowed=True
         )
-        
+
         self.x = -settings.PLAYER_WIDTH
         self.texture = settings.GAME_TEXTURES['martian']
         self.animation = Animation(
             settings.GAME_FRAMES['martian'][9:], 0.15
         )
-        
+
         self.can_input = False
-    
+
         def arrive():
             self.can_input = True
             self.animation = Animation(
@@ -47,19 +49,24 @@ class StartState(BaseState):
         Timer.tween(
             5,
             [
-                (self.title, {'x': settings.VIRTUAL_WIDTH//2 - self.title.rect.width//2}),
+                (self.title, {'x': settings.VIRTUAL_WIDTH//2 -
+                 self.title.rect.width//2}),
                 (self, {'x': settings.VIRTUAL_WIDTH//2 - 8})
             ],
             on_finish=arrive
-        )        
-    
+        )
+
+    def exit(self):
+        InputHandler.unregister_listener(self)
+
+    def on_input(self, input_id, input_data):
+        if self.can_input and input_id == 'enter' and input_data.pressed:
+            pygame.mixer_music.stop()
+            self.state_machine.change('play')
+
     def update(self, dt):
         self.animation.update(dt)
 
-        if self.can_input and settings.pressed_keys.get(pygame.K_RETURN):
-            pygame.mixer_music.stop()
-            self.state_machine.change('play')
-    
     def render(self, surface):
         surface.fill((25, 130, 196))
         self.title.render(surface)
@@ -151,13 +158,17 @@ class PlayState(BaseState):
         )
 
 
-class StatsState(BaseState):
+class StatsState(BaseState, InputListener):
     def enter(self, player):
+        InputHandler.register_listener(self)
         self.player = player
         self.coin_defs = ITEMS['coin']
 
-    def update(self, dt):
-        if settings.pressed_keys.get(pygame.K_RETURN):
+    def exit(self):
+        InputHandler.unregister_listener(self)
+
+    def on_input(self, input_id, input_data):
+        if input_id == 'enter' and input_data.pressed:
             self.state_machine.change('play')
 
     def render(self, surface):
@@ -200,4 +211,3 @@ class StatsState(BaseState):
             settings.VIRTUAL_WIDTH // 2, settings.VIRTUAL_HEIGHT - 20,
             (255, 255, 255), center=True, shadowed=True
         )
-

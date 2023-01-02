@@ -7,6 +7,7 @@ Date: 07/14/2020
 """
 import pygame
 
+
 def generate_quads(atlas, tile_width, tile_height):
     """
     Given and atlas, this function builds a list of quads based on
@@ -32,5 +33,5 @@ def generate_quads(atlas, tile_width, tile_height):
                     tile_width, tile_height
                 )
             )
-    
+
     return spritesheet

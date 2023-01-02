@@ -5,9 +5,8 @@ a platformer.
 Author: Alejandro Mujica (aledrums@gmail.com) 
 Date: 07/19/2020
 """
-import pygame
-
 from gale.game import Game
+from gale.input_handler import InputHandler, InputListener
 from gale.state_machine import StateMachine
 
 import settings
@@ -15,8 +14,9 @@ import settings
 from src.states import game
 
 
-class MartianGame(Game):
+class MartianGame(Game, InputListener):
     def init(self):
+        InputHandler.register_listener(self)
         self.state_machine = StateMachine({
             'start': game.StartState,
             'play': game.PlayState,
@@ -27,15 +27,13 @@ class MartianGame(Game):
 
     def update(self, dt):
         self.state_machine.update(dt)
-        settings.pressed_keys = {}
 
     def render(self, surface):
         self.state_machine.render(surface)
 
-    def keydown(self, key):
-        if key == pygame.K_ESCAPE:
+    def on_input(self, input_id, input_data):
+        if input_id == 'quit' and input_data.pressed:
             self.quit()
-        settings.pressed_keys[key] = True
 
 
 if __name__ == '__main__':

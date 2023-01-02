@@ -50,4 +50,3 @@ class SnailWalkState(BaseEntityState):
         if self.check_boundary():
             self.entity.vx *= -1
             self.entity.inverted = not self.entity.inverted
-

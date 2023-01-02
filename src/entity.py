@@ -118,4 +118,3 @@ class Entity(DrawableMixin, AnimatedMixin, CollisionMixin):
         right = TileMap.to_j(cr.right)
         return (self.check_solid_tile(i + 1, left, GameObject.TOP)
                 or self.check_solid_tile(i + 1, right, GameObject.TOP))
-
